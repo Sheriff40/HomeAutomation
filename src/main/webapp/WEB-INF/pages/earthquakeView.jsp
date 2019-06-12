@@ -28,8 +28,8 @@
 	<h1 >${earthquake.id} ${earthquake.description}</h1>
 	<a href="http://localhost:8080/earthquakes" ]>All earthquakes</a>
 	<hr>
-	<h2 >Earthquake Date: ${time.getMonth()}, ${time.getDayOfMonth()}, ${time.getYear() }</h2>
-	<h2>Earthquake Time: ${time.getHour()}:${time.getMinute() }:${time.getSecond()}</h2>
+	<h2 >Earthquake Date: ${earthquake.date.getMonth()}, ${earthquake.date.getDayOfMonth()}, ${earthquake.date.getYear() }</h2>
+	<h2>Earthquake Time: ${earthquake.date.getHour()}:${earthquake.date.getMinute() }:${earthquake.date.getSecond()}</h2>
 	
 </body>
 </html>

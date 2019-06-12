@@ -11,13 +11,18 @@
 	{
 	width:50%;margin:0 auto;background:#f9f9f9;padding:50px;text-align:center;background:#f9f9f9;
 	}
+	h1
+	{
+		text-align:center;
+	}
 </style>
 </head>
 <body>
-	
+	<h1>Earthquakes</h1>
+	<hr>
 	<c:forEach var="listVar" items="${earthquakes}">
   			<c:out value="${listVar.id}. "/>
-  			EarthQuake Detected Time: ${listVar.description}
+  			Earthquake Detected Date: ${listVar.date.getMonth()}, ${listVar.date.getDayOfMonth()}, ${listVar.date.getYear()}, Time:  ${listVar.date.getHour()}:${listVar.date.getMinute() }:${listVar.date.getSecond()}
   			<br>
   		
 	</c:forEach>

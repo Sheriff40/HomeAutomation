@@ -20,8 +20,10 @@ public class HomeController {
 	@ResponseBody
 	public String earthquakeDetected()
 	{
+		LocalDateTime date = LocalDateTime.now();
 		Earthquake eq = new Earthquake();
 		eq.setDescription("Earthquake Detected");
+		eq.setDate(date);
 		earthQuakeRepo.save(eq);
 		return "Recorded";
 			
@@ -31,8 +33,6 @@ public class HomeController {
 	public ModelAndView earthquake()
 	{
 		ModelAndView mv = new ModelAndView("earthquakeView");
-		mv.addObject("time", timePoint);
-		timePoint = LocalDateTime.now(); 
 		int id = earthQuakeRepo.getMaxId();
 		mv.addObject("earthquake", earthQuakeRepo.getById(id));
 		return mv;	
